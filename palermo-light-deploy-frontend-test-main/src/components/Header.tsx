@@ -135,7 +135,7 @@ const Header: React.FC = () => {
                   </button>
                 </>
               ) : (
-                <a href="/auth/register" className="text-white hover:text-gray-300 transition duration-300">
+                <a href="/auth/register" className="text-white max-md:hidden hover:text-gray-300 transition duration-300">
                   Войти
                 </a>
               )}
