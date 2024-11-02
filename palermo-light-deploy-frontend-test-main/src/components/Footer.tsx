@@ -26,9 +26,9 @@ const Footer: React.FC = () => {
                 <div>
                   <p className="text-gray-300">Контактные данные:</p>
                   <div className="flex flex-col">
-                    <a href="tel:+79296748380" className="font-bold hover:text-blue-300 transition">+7 (929) 674-83-80</a>
-                    <a href="tel:+79349992909" className="font-bold hover:text-blue-300 transition">+7 (934) 999-29-09</a>
-                    <a href="mailto:davidmonte00@mail.ru" className="hover:text-blue-300 transition">davidmonte00@mail.ru</a>
+                    <a href="tel:+79296748380" className="font-bold hover:text-neutral-300 transition">+7 (929) 674-83-80</a>
+                    <a href="tel:+79349992909" className="font-bold hover:text-neutral-300 transition">+7 (934) 999-29-09</a>
+                    <a href="mailto:davidmonte00@mail.ru" className="hover:text-neutral-300 transition">davidmonte00@mail.ru</a>
                   </div>
                 </div>
               </div>
@@ -36,9 +36,9 @@ const Footer: React.FC = () => {
               <div className="flex flex-col w-full p-4 space-y-6 lg:p-8">
                 <h2 className="font-bold text-2xl text-neutral-400">Информация</h2>
                 <div className="flex flex-col space-y-4">
-                  <a href="#" className="font-bold hover:text-blue-300 transition">Фото Магазина</a>
-                  <a href="#" className="font-bold hover:text-blue-300 transition">Документация</a>
-                  <a href="#" className="font-bold hover:text-blue-300 transition">Новости</a>
+                  <a href="#" className="font-bold hover:text-neutral-300 transition">Фото Магазина</a>
+                  <a href="#" className="font-bold hover:text-neutral-300 transition">Документация</a>
+                  <a href="#" className="font-bold hover:text-neutral-300 transition">Новости</a>
                 </div>
                 <img src="./images/logo.png" alt="Логотип" className="h-20 w-20    mr-4" />
 
@@ -47,9 +47,9 @@ const Footer: React.FC = () => {
               <div className="flex flex-col w-full p-4 space-y-6 lg:p-8">
                 <h2 className="font-bold text-2xl text-neutral-400">Дополнительно</h2>
                 <div className="flex flex-col space-y-4">
-                  <a href="#" className="font-bold hover:text-blue-300 transition">Новинки</a>
-                  <a href="#" className="font-bold hover:text-blue-300 transition">История Магазина</a>
-                  <a href="#" className="font-bold hover:text-blue-300 transition">Доставка</a>
+                  <a href="#" className="font-bold hover:text-neutral-300 transition">Новинки</a>
+                  <a href="#" className="font-bold hover:text-neutral-300 transition">История Магазина</a>
+                  <a href="#" className="font-bold hover:text-neutral-300 transition">Доставка</a>
                   <div className="flex flex-start items-center mt-6">
                     <button 
                       onClick={toggleUsers} 

@@ -32,7 +32,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         <button
           key={i}
           type="button"
-          className={`inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-black ${i === currentPage ? 'bg-blue-600 text-white' : 'dark:bg-black'}`}
+          className={`inline-flex items-center rounded-lg px-4 py-2 text-sm font-semibold border dark:border-black ${i === currentPage ? 'bg-white text-black' : 'dark:bg-black'}`}
           onClick={() => onPageChange(i)}
         >
           {i}
@@ -63,7 +63,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         <button
           key={i}
           type="button"
-          className={`inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-black ${i === currentPage ? 'bg-blue-600 text-white' : ''}`}
+          className={`inline-flex items-center rounded-lg px-4 py-2 text-sm font-semibold border dark:border-black ${i === currentPage ? 'bg-white text-black' : ''}`}
           onClick={() => onPageChange(i)}
         >
           {i}
@@ -91,7 +91,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         <button
           key={i}
           type="button"
-          className={`inline-flex items-center px-4 py-3 text-sm font-semibold border dark:border-black ${i === currentPage ? 'bg-blue-600 text-white' : 'dark:bg-black'}`}
+          className={`inline-flex items-center rounded-lg px-4 py-3 text-sm font-semibold border dark:border-black ${i === currentPage ? 'bg-white text-black' : 'dark:bg-black'}`}
           onClick={() => onPageChange(i)}
         >
           {i}
@@ -104,7 +104,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
       <button
         key="next"
         type="button"
-        className={`inline-flex items-center px-4 py-2 text-sm font-semibold border rounded-r-md dark:border-black ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
+        className={`inline-flex items-center px-4 absolute py-2 text-sm font-semibold border rounded-r-md dark:border-black ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
         onClick={() => currentPage < totalPages && onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >

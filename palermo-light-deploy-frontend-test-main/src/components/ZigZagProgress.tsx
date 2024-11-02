@@ -31,7 +31,7 @@ const ZigzagProgressBar: React.FC = () => {
               ease: 'easeInOut',
             }}
             className={`absolute w-full h-[10%] bg-white ${i % 2 === 0 ? 'mr-auto' : 'ml-auto'} transform ${
-              i % 2 === 0 ? '-rotate-12' : 'rotate-12'
+              i % 2 === 0 ? '-rotate-32' : 'rotate-12'
             }`}
             style={{ top: `${i * 10}%` }}
           ></motion.div>

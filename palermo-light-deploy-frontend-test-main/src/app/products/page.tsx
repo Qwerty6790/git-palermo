@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Pagination from '../../components/PaginationComponents';
 import { CatalogOfProducts } from '../../components/CatalogOfProducts';
 import { ProductI } from '../../components/CatalogOfProducts';
-import FilterSed from '../../components/FutureFilterComponents';
 import { Toaster } from 'sonner'
 import Favorite from '@/components/KinkLightNews/page';
 import { ClipLoader } from 'react-spinners';
 import FilterOptions from '@/components/FutureFilterOptionsComponents';
-import ZigzagProgressBar from '@/components/ZigZagProgress';
+import CardContainer from '@/components/CardExposition';
+import KinkLight from '@/components/KinkLightNews/page';
 
 type Category = {
   label: string;
@@ -31,6 +31,11 @@ const brands: Brand[] = [
     categories: [
       { label: 'Потолочная Люстра', searchName: 'Потолочная Люстра' },
       { label: 'Люстра подвесная', searchName: 'Люстра подвесная' },
+      { label: 'Потолочный Светильник', searchName: 'Потолочный Светильник' },
+      { label: 'Врезной Светильник', searchName: 'Врезной Светильник' },
+      { label: 'Настенный Светильник', searchName: 'Настенный Светильник' },
+      { label: 'Напольный Светильник', searchName: 'Напольный Светильник' },
+      { label: 'Настольный Светильник', searchName: 'Настольный Светильник' },
       { label: 'Подвес', searchName: 'Подвес' }, 
       { label: 'Бра', searchName: 'Бра' },
       { label: 'Уличный светильник', searchName: 'Уличный светильник' },
@@ -40,13 +45,14 @@ const brands: Brand[] = [
     name: 'KinkLight',
     categories: [
       { label: 'Люстра', href: '/Catalog', searchName: 'Люстра' },
+      { label: 'Настольная лампа', href: '/Catalog', searchName: 'Настольная лампа' },
+      { label: 'Кресло', href: '/Catalog', searchName: 'Кресло' },
       { label: 'Торшер', href: '/web-1nashtange', searchName: 'Торшер' },
       { label: 'Настенный Светильник', href: '/web-1podvesnoy', searchName: 'Настенный Светильник' },
       { label: 'Светильник уличный', href: '/office-lamps', searchName: 'Светильник уличный' },
       { label: 'Подвес', href: '/decorative-lamps', searchName: 'Подвес' },
       { label: 'Бра', href: '/decorative-lamps', searchName: 'Бра' },
       { label: 'Светильник', href: '/decorative-lamps', searchName: 'Светильник' },
-      { label: 'Лампа', href: '/decorative-lamps', searchName: 'Лампа' },
       { label: 'Трековый светильник', href: '/decorative-lamps', searchName: 'трековый светильник' },
       { label: 'Настенный светильник', href: '/decorative-lamps', searchName: 'настенный светильник' },
       { label: 'Шнур с перекл', href: '/decorative-lamps', searchName: 'Шнур с перекл' },
@@ -56,38 +62,50 @@ const brands: Brand[] = [
     name: 'EksMarket',
     categories: [
       { label: 'Люстра', searchName: 'Люстра' },
-      { label: 'Люстра подвесная', searchName: 'Люстра подвесная' },
+      { label: 'Лампа', searchName: 'Лампа' },
       { label: 'Подвес', searchName: 'Подвес' }, 
-      { label: 'Бра', searchName: 'Бра' },
+      { label: 'Светильник', searchName: 'Светильник' },
+      { label: 'Пульт', searchName: 'Пульт' },
+      { label: 'Блок питания', searchName: 'Блок питания' },
     ],
   },
   {
     name: 'LightStar',
     categories: [
-      { label: 'Люстра Потолочная', searchName: 'Люстра Потолочная' },
+      { label: 'Люстра', searchName: 'Люстра' },
       { label: 'Люстра подвесная', searchName: 'Люстра подвесная' },
       { label: 'Подвес', searchName: 'Подвес' }, 
       { label: 'Бра', searchName: 'Бра' },
+      { label: 'Светильник', searchName: 'Светильник' },
+      { label: 'Настольная лампа', href: '/Catalog', searchName: 'Настольная лампа' },
+      { label: 'Торшер', href: '/web-1nashtange', searchName: 'Торшер' },
+      { label: 'Светильник уличный', href: '/office-lamps', searchName: 'Светильник уличный' },
     ],
   },
   {
     name: 'ElectroStandart',
     categories: [
-      { label: 'Трековая Система', searchName: 'Трековая Система' },
-      { label: 'Люстра подвесная', searchName: 'Люстра подвесная' },
+      { label: 'Потолочный', searchName: 'Потолочный' },
+      { label: 'Подвесной', searchName: 'Подвесной' },
       { label: 'Подвес', searchName: 'Подвес' }, 
-      { label: 'Бра', searchName: 'Бра' },
       { label: 'Уличный светильник', searchName: 'Уличный светильник' },
+      { label: 'Лампа', searchName: 'Лампа' },
+      { label: 'Настольный', searchName: 'Настольный' },
+      { label: 'Лента', searchName: 'Лента' },
+      { label: 'Неон', searchName: 'Неон' },
+      { label: 'Настенный', searchName: 'Настенный' },
+      { label: 'Датчик', searchName: 'Датчик' },
+      { label: 'Ландшафт', searchName: 'Ландшафт' },
     ],
   },
   {
     name: 'Denkirs',
     categories: [
-      { label: 'Потолочная Люстра', searchName: 'Потолочная Люстра' },
-      { label: 'Люстра подвесная', searchName: 'Люстра подвесная' },
-      { label: 'Подвес', searchName: 'Подвес' }, 
+      { label: 'Светильник', searchName: 'Светильник' },
+      { label: 'Подвесной светильник', searchName: 'Подвесной светильник' },
       { label: 'Бра', searchName: 'Бра' },
       { label: 'Уличный светильник', searchName: 'Уличный светильник' },
+      { label: 'Встраиваемый', searchName: 'Встраиваемый' },
     ],
   },
   {
@@ -97,7 +115,6 @@ const brands: Brand[] = [
       { label: 'Розетка', searchName: 'Розетка' },
       { label: 'Датчик', searchName: 'Датчик' }, 
       { label: 'Провод', searchName: 'Провод' },
-      { label: 'Уличный светильник', searchName: 'Уличный светильник' },
     ],
   },
 ];
@@ -178,29 +195,16 @@ const Catalog: React.FC = () => {
 
   return (
     <>
-    <div className="flex flex-col items-center justify-start mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-screen-xl">
+    <div className="flex flex-col   items-center justify-start mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 w-full max-w-screen-xl">
      
         <Toaster position="top-center" richColors />
-        <div className="flex flex-col md:flex-row w-full gap-6 md:gap-8 lg:gap-10 xl:gap-12 mt-8">
+        <div className="flex flex-col  md:flex-row w-full gap-6 md:gap-8 lg:gap-10 xl:gap-12 mt-8">
 
           {/* Favorite Component */}
-          <div className="w-full md:w-1/3 lg:w-1/2 h-auto bg-black lg:mt-28  p-4 md:p-6 rounded-lg space-y-4 order-2 md:order-1">
-            {loading ? (
-              <div className="flex justify-center items-center h-full">
-                <ClipLoader color="#FFFFFF" loading={loading} size={50} />
-              </div>
-            ) : products.length > 0 ? (
-              <Favorite />
-          
-            ) : (
-              <p className="text-white text-center">Нет доступных товаров</p>
-            )}
-            <FilterOptions />
-          </div>
 
           {/* Filters */}
-          <div className="w-full  max-lg:mt-48 max-lg:-ml-44 max-md:ml-0 md:w-2/3 lg:w-1/2 h-auto bg-black lg:mt-28  max-md:mt-24 lg:ml-28 p-4 md:p-6 lg:p-8 rounded-lg space-y-4 order-1 md:order-2">
-            <div className="bg-gradient-to-b from-neutral-900 to-black p-6 rounded-lg shadow-lg flex flex-col space-y-6 w-full">
+          <div className="w-full    max-lg:-ml-40 max-md:ml-0 md:w-2/3 lg:w-1/2 h-auto  lg:mt-28  max-md:mt-24 lg:ml-44 p-4 md:p-6 lg:p-8 rounded-lg space-y-4 order-1 md:order-2">
+            <div className="bg-gradient-to-b max-xl:mt-20 from-neutral-900 to-black p-6 rounded-lg shadow-lg flex flex-col space-y-6 w-full">
               <div className="w-full">
                 {/* Brand Dropdown */}
                 <div className="relative w-full mb-4" ref={brandDropdownRef}>
@@ -237,12 +241,12 @@ const Catalog: React.FC = () => {
                         ))}
                       </motion.div>
                     )}
-                     
+                    
                   </AnimatePresence>
-                  
                 </div>
                 {/* Category Dropdown */}
                 <div className="relative w-full mb-4" ref={categoryDropdownRef}>
+                  
                   <button
                     className="w-full text-left text-white py-3 px-5 font-semibold rounded-md flex justify-between items-center transition-all duration-300 hover:bg-neutral-700"
                     onClick={() => {
@@ -254,6 +258,7 @@ const Catalog: React.FC = () => {
                     <span className={`transition-transform transform ${showCategoryDropdown ? 'rotate-180' : 'rotate-0'}`}>
                       <ChevronDown color="white" size={24} />
                     </span>
+                    
                   </button>
                   <AnimatePresence>
                     {showCategoryDropdown && (
@@ -322,15 +327,19 @@ const Catalog: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <FilterSed />
+  
+              <h2 className='text-5xl max-xl:hidden max-md:hidden max-lg:hidden  font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-neutral-300 to-neutral-600'>Фильтры</h2>
+
             </div>
           </div>
+
         </div>
 
         {/* Main Content */}
-        <div className="flex flex-col w-full mt-8 md:mt-4">
-          
-          <div className="relative md:w-3/4 lg:w-3/4 bg-black p-4 md:p-6 mx-auto">
+        <div className="flex  flex-col w-full mt-8 md:mt-4">
+          <div className="relative md:w-3/4 lg:w-3/4  p-4 md:p-6 mx-auto">
+          <h2 className='text-5xl py-2  font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-neutral-300 to-neutral-600'>Каталог</h2>
+          <FilterOptions />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -341,6 +350,7 @@ const Catalog: React.FC = () => {
                   <ClipLoader color="#FFFFFF" loading={loading} size={50} />
                 </div>
               ) : products.length > 0 ? (
+                
                 <CatalogOfProducts products={products} />
               ) : (
                 <p className="text-white text-center">Нет доступных товаров</p>
@@ -354,12 +364,10 @@ const Catalog: React.FC = () => {
             >
               <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
             </motion.div>
-            
+   
           </div>
         </div>
       </div>
-
-      <ZigzagProgressBar />
     </>
   );
 };

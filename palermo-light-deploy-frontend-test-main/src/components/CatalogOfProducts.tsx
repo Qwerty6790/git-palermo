@@ -56,7 +56,7 @@ export const CatalogOfProducts: React.FC<CatalogOfProductsProps> = ({ products }
   };
 
   return (
-    <div className="grid grid-cols-2 lg:w-[1500px] lg:-ml-[350px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-5">
+    <div className="grid grid-cols-2 lg:w-[1500px] lg:-ml-[150px] xl:-ml-[350px]   sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-5">
       {products.map((product) => {
         const stockCount = getStockCount(product.stock);
         const stockClass = stockCount > 0 ? 'text-green-500' : 'text-red-500';
@@ -65,7 +65,7 @@ export const CatalogOfProducts: React.FC<CatalogOfProductsProps> = ({ products }
           <div key={product._id} className="relative shadow-lg shadow-zinc-900 transition duration-500 cursor-pointer bg-white border border-zinc-700 rounded-lg overflow-hidden">
             <Link href={`/products/${product.source}/${product._id}`} passHref>
               <img
-                className="w-full h-48 sm:h-56 md:h-64 object-cover"
+                className="w-full h-48 sm:h-56 md:h-64 object-contain"
                 src={product.imageAddress}
                 alt={product.name}
               />

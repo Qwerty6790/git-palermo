@@ -51,7 +51,7 @@ const ProductDetail: React.FC = () => {
     return match ? parseInt(match[0], 10) : 0; // Возвращает число или 0, если нет
   };
 
-  const addToCart = (productId: string, supplier: string) => {
+  const addToCart = (article: string, supplier: string) => {
     if (!product) {
       toast.error('Товар не найден');
       return;
@@ -65,12 +65,12 @@ const ProductDetail: React.FC = () => {
     }
 
     const cart = JSON.parse(localStorage.getItem('cart') || '{"products": []}');
-    const existingProductIndex = cart.products.findIndex((item: any) => item.productId === productId);
+    const existingProductIndex = cart.products.findIndex((item: any) => item.article === article);
 
     if (existingProductIndex > -1) {
       cart.products[existingProductIndex].quantity += 1;
     } else {
-      cart.products.push({ productId, supplier, quantity: 1 });
+      cart.products.push({ article, supplier, quantity: 1 });
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -80,6 +80,7 @@ const ProductDetail: React.FC = () => {
 
     toast.success('Товар добавлен в корзину');
   };
+
 
   if (loading) {
     return (
@@ -120,7 +121,7 @@ const ProductDetail: React.FC = () => {
             <div className="mt-4">
               <button
                 onClick={() => addToCart(product._id, product.source)}
-                className="bg-blue-600 text-white py-3 px-6 rounded-md transition duration-500 hover:bg-blue-700 w-full"
+                className="bg-white text-black py-3 px-6 rounded-md transition duration-500 hover:bg-neutral-600 w-full"
               >
                 В Корзину
               </button>

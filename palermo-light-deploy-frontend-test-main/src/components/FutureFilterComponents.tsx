@@ -15,7 +15,7 @@ const FilterSed: React.FC = () => {
         ].map((label) => (
           <button
             key={label}
-            className="w-full max-w-md text-left  text-white py-2 px-4 font-bold rounded-md  bg-black flex justify-between items-center transition-transform transform hover:scale-105"
+            className="w-full max-w-md text-left  text-white py-2 px-4 font-bold rounded-md  bg-neutral-900 flex justify-between items-center transition-transform transform hover:scale-105"
           >
             {label}
             <span className='transition-transform transform '>

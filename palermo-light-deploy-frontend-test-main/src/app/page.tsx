@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import ImageHoverEffect from '../components/DenkirsBanner';
 import Denkirs from '@/components/DenkirsNews/page';  
-
 import { ClipLoader } from 'react-spinners';
+
 
 
 
@@ -23,7 +23,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center w-full px-4"> {/* Full-width container */}
+    <div className="flex flex-col  items-center w-full px-4"> {/* Full-width container */}
       <motion.div
         className="w-full lg:mt-10 flex flex-col items-center"
         initial="hidden"
@@ -32,7 +32,7 @@ export default function Home() {
         transition={{ duration: 0.5 }}
       >
         <ImageHoverEffect />
-        
+      
         {/* Denkirs Products Section */}
         <motion.div
           className="-mt-20 w-full max-w-[1635px]" // Adjust width for mobile
@@ -46,7 +46,6 @@ export default function Home() {
         ) :  (
           <><>
                 <Denkirs />
-                
               </></>
         )}
 

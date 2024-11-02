@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 
@@ -111,6 +111,20 @@ const About: React.FC = () => {
         </motion.p>
       </div>
 
+      <div className="flex justify-center space-x-4 py-8">
+        {["/images/side8.png", "/images/side9.png"].map((image, idx) => (
+          <div
+            key={idx}
+            className="w-32 h-48 bg-cover bg-center rounded-lg shadow-md transition-transform duration-500 transform hover:scale-105"
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+            }}
+          />
+        ))}
+      </div>
+
       <div className="container max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 py-12">
         {collections.map((collection, idx) => (
           <AnimatedCard
@@ -121,7 +135,6 @@ const About: React.FC = () => {
           />
         ))}
       </div>
-
     </section>
   );
 };

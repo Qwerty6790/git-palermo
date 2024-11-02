@@ -1,13 +1,13 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { CatalogOfProductsNewsFavourite, ProductI } from './CatalogOfNewsFavourite';
+import { CatalogOfProductsNewsKinklight, ProductI } from './CatalogOfNewsKinkLight';
 
 const minPrice = 0;
 const maxPrice = 1000000;
 const page = 1;
 
-const Favorite: React.FC = () => {
+const KinkLight: React.FC = () => {
   const [products, setProducts] = useState<ProductI[]>([]);
 
   const fetchProducts = async () => {
@@ -31,19 +31,19 @@ const Favorite: React.FC = () => {
   }, []);
 
   return (
-    <motion.div
-      className='lg:-ml-44 max-lg:hidden max-md:hidden '
+    <><motion.div
+      className='lg:-ml-64    max-xl:hidden max-lg:hidden max-md:hidden '
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       {products.length > 0 ? (
-        <CatalogOfProductsNewsFavourite products={products} />
+        <CatalogOfProductsNewsKinklight products={products} />
       ) : (
         <p>Товары не найдены.</p>
       )}
-    </motion.div>
+    </motion.div></>
   );
 };
 
-export default Favorite;
+export default KinkLight;

@@ -12,7 +12,7 @@ export interface ProductI {
   source: string;
 }
 
-export const CatalogOfProductsNewsFavourite: React.FC<{ products: ProductI[] }> = ({ products }) => {
+export const CatalogOfProductsNewsKinklight: React.FC<{ products: ProductI[] }> = ({ products }) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsToShow = 3;
@@ -43,11 +43,11 @@ export const CatalogOfProductsNewsFavourite: React.FC<{ products: ProductI[] }> 
   }, []);
 
   return (
-    <div className="relative flex items-center">
+    <div className="relative scale-90 flex items-center">
       <div className="absolute right-0 space-y-2">
       </div>
       <div
-        className="overflow-hidden cursor-default select-none"
+        className=" cursor-default select-none"
         ref={scrollRef}
         style={{ userSelect: 'none', width: '100%' }}
       >

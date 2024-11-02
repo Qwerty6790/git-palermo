@@ -3,7 +3,7 @@ import React from 'react';
 
 const FilterOptions: React.FC = () => {
   return (
-    <div className="flex max-lg:hidden max-md:hidden items-center lg:-ml-56  justify-start py-6 px-4 rounded-lg shadow-md bg-gradient-to-l from-black to-neutral-800">
+    <div className="flex max-xl:hidden   max-lg:hidden max-md:hidden items-center lg:-ml-52  justify-start py-6  px-4 rounded-lg shadow-md bg-gradient-to-l from-black">
       {[
         { label: "По релевантности", icon: <Filter color="white" size={18} /> },
         { label: "По бренду", icon: <Tag color="white" size={18} /> },
@@ -16,7 +16,7 @@ const FilterOptions: React.FC = () => {
             <span className="w-px h-8 bg-neutral-700 mx-4" />
           )}
           <button
-            className="flex items-center justify-between px-4 py-2 font-medium text-gray-200 rounded-lg bg-neutral-900 hover:bg-gray-800 transition-colors duration-200 transform hover:scale-105"
+            className="flex items-center  justify-between px-2 py-2 font-medium text-gray-200 rounded-lg bg-neutral-900 hover:bg-neutral-700 transition-colors duration-200 transform hover:scale-105"
           >
             <span className="mr-2">{filter.icon}</span>
             {filter.label}
